@@ -1,1 +1,1 @@
-# expense_managment_project
+# expense_mgmt_project

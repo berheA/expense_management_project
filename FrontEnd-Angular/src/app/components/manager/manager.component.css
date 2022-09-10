@@ -1,0 +1,11 @@
+#sidemenu {
+    background-image: url('../../../assets/images/manager_side_menu.jpg');
+    background-size: 100vh;
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+#overlay {
+    width: fit-content;
+}

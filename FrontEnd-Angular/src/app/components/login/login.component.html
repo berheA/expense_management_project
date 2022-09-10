@@ -1,0 +1,30 @@
+
+<body class="fluid-container">
+  
+    <div class="position-absolute top-50 start-50 translate-middle bg-light bg-opacity-75 text-center">
+      <form name="loginForm" id="loginForm" novalidate>
+      <div class="m-auto pt-5 px-5">
+          <h4 class="fw-bolder" id="welcome">Welcome to the Employee Reimbursement System</h4>
+          <div class="invalid-feedback" id="failedLogin">Bad Username or Password Please try again</div>
+
+        </div>
+      <!-- <form class="form-control"> -->
+        <div class="m-auto pt-4 px-5">
+          <!-- <label for="username" class="form-label"></label> -->
+          <input class="form-control" type="text" id="username" name="username" placeholder="Username" required>
+          <div class="invalid-feedback" id="invalidUsername">Please provide a username</div>
+        </div>
+        <div class="m-auto pt-2 px-5">
+          <!-- <label class="form-label" for="password">Password</label> -->
+          <input class="form-control" type="password" id="password" name="password" placeholder="Password" required>
+          <div class="invalid-feedback" id="invalidPassword">Please provide a password</div>
+        </div>
+        
+      </form>
+      <div class="m-auto p-5">
+        <button [routerLink]="[]" routerLinkActive="activeButton" (click)="trigger($event)" class="form-control btn btn-primary" type="submit" id="loginBtn" formaction="">Login</button>
+      </div>
+    </div>
+    
+</body>
+

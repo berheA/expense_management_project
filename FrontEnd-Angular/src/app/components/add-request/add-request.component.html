@@ -1,0 +1,48 @@
+
+<body class="container-fluid">
+    <div class="position-absolute top-50 start-50 translate-middle bg-light bg-opacity-75">
+        <form name="addRequest" id="addRequest" novalidate>
+        <div class="m-4">
+            <h3>Reimbursement Request Form</h3>
+        </div>
+
+        <div class="px-5">
+            <label class="form-label" for="amount">Amount</label>
+            <input class="form-control" type="text" id="amount" name="amount" required placeholder="$100.00" pattern="[1-9][0-9]{0,3}.[0-9]{0,2}|[1-9][0-9]{0,3}">
+            <div class="invalid-feedback">Invalid amount inputted</div>
+        </div>
+
+        <div class="mt-1 px-5">
+            <label class="form-label" for="reimType">Type</label>
+                <select class="form-select" id="reimType" required>
+                    <option value= "Lodging" selected>Lodging</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Food">Food</option>
+                    <option value="Other">Other</option>
+                </select>
+                <div class="invalid-feedback">Please select the type of reimbursement</div>
+
+            </div>
+
+        <div class="mt-1 px-5">
+            <label class="form-label" for="description">Description</label>
+            <textarea class="form-control" id="description" name="description"  placeholder="Enter request description"></textarea>
+        </div>
+
+        <div class="mt-1 px-5">
+            <label class="label-control" for="receipt">Receipt</label>
+            <input class="form-control" type="file" id="receipt" accept="image/*,.pdf" required>
+            <div class="invalid-feedback">Invalid file type, please use image type or pdf</div>
+        </div>
+
+
+        </form>
+        <div class="text-center m-auto p-5">
+            <button (click)="trigger($event)" class="btn btn-primary m-5" id="submitRequest" type="submit"> Submit </button>
+            <button routerLink="/employee" routerLinkActive="activeButton" class="btn btn-danger m-5" id="cancelRequest" type="submit"> Cancel </button>
+        </div>
+    </div>
+
+
+
+</body>

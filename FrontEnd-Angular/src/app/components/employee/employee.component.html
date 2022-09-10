@@ -1,0 +1,103 @@
+
+<body class="container-fluid">
+    <div>
+        <div class="row">
+            <div class= "col-5" id="sidemenu">
+                <div class="bg-light bg-opacity-75 col-4" id="overlay">
+                        <div class="mt-5 p-2">
+                        <h1 class="fw-bolder">Welcome {{name}}!</h1>
+                        </div>
+                        <div class="ms-5 mb-3">
+                            <button type="button" class="btn btn-primary" (click)="viewPending()">
+                                <span class="badge badge-light">{{pending}}</span>
+                                Pending
+                            </button>
+                            </div>
+        
+                            <div class="ms-5 mb-3">
+                            <button type="button" class="btn btn-success" (click)="viewApproved()">
+                                <span class="badge badge-light">{{approved}}</span>
+                                Approved  
+                            </button>
+                            </div>
+        
+                            <div class="ms-5 mt-3 mb-3">
+                            <button type="button" class="btn btn-danger" (click)="viewDenied()">
+                                <span class="badge badge-light">{{denied}}</span>
+                                Denied
+                            </button>
+                            </div>  
+
+                            <div class="ms-5 mt-3 mb-3">
+                                <button  routerLink="/makeRequest" routerLinkActive="activeButton" type="button" class="btn btn-info">
+                                    Make Request
+                                </button>
+                                </div> 
+
+                            <div class="ms-5 mt-5 pb-3">
+                                <button routerLink="/login" routerLinkActive="activeButton" type="submit" class="btn btn-secondary">
+                                    Sign Out
+                                </button>
+                            </div>
+                            
+                </div>
+            </div> 
+            <div class="col-7" >
+                <div class = "m-2" *ngFor = "let reimb of reimbs">
+                <div [ngStyle]="background(reimb.statusID)" class="py-1 px-3" >
+                    <table class="table table-borderless p-1 ">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>{{reimb.id}}</td>
+                        </tr>
+                        <tr>
+                            <td>Amount</td>
+                            <td>{{reimb.amount}}</td>
+                        </tr>
+                        <tr>
+                            <td>Time Submitted</td>
+                            <td>{{reimb.timeSubmitted}}</td>
+                        </tr>
+                        <tr>
+                            <td>Time Resolved</td>
+                            <td>{{reimb.timeResolved}}</td>
+                        </tr>
+                        <tr>
+                            <td>Resolver</td>
+                            <td>{{reimb.resolver}}</td>
+                        </tr>
+                        <tr><td>
+                            Description
+                        </td>
+                        <td>{{reimb.description}}</td>
+                    </tr>
+                    <tr>
+                        <td>Receipt</td>
+                        <td>{{reimb.receipt}}</td>
+                    </tr>
+                    <tr>
+                        <td>Type</td>
+                        <td>{{reimb.typeID}}</td>
+                    </tr>
+                    <tr>
+                        <td>Status</td>
+                        <td>{{reimb.statusID}}</td>
+                    </tr>
+            
+                    </table>
+                </div>
+                
+            </div>
+            </div>  
+    </div>
+    </div>
+
+  
+
+</body>
